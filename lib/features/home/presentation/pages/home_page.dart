@@ -1,3 +1,4 @@
+import 'package:books/features/home/presentation/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,6 +6,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: HomeViewBody(),
+    );
   }
 }
