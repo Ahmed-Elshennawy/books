@@ -1,6 +1,7 @@
 import 'package:books/constants.dart';
 import 'package:books/core/utils/app_fonts.dart';
 import 'package:books/core/utils/app_images.dart';
+import 'package:books/features/home/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -48,6 +49,8 @@ class BestSellerListViewItem extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
+                    Spacer(),
+                    BookRating(),
                   ],
                 ),
               ],
