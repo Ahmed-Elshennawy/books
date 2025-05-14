@@ -1,3 +1,5 @@
+import 'package:books/constants.dart';
+import 'package:books/core/functions/save_books.dart';
 import 'package:books/core/services/api_service.dart';
 import 'package:books/features/home/data/models/book_model/book_model.dart';
 import 'package:books/features/home/domain/entities/book_entity.dart';
@@ -17,6 +19,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
       endpoint: 'volumes?Filtering=free-ebooks&q=programming',
     );
     List<BookEntity> books = getBooksList(data); // Featured Books  List
+    saveBooksData(books, kFeaturedBox); // Save Featured Books
     return books;
   }
 
