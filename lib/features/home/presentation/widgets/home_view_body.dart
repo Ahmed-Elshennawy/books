@@ -15,7 +15,9 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // App Bar
               HomeAppBar(),
+              // Featured Books
               FeaturedBooksListView(),
               const SizedBox(height: 30.0),
               Padding(
@@ -26,7 +28,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-
+        // Best Seller Books
         SliverFillRemaining(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),

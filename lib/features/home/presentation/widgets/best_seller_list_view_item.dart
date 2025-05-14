@@ -6,19 +6,19 @@ import 'package:books/features/home/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BooksListViewItem extends StatelessWidget {
+  const BooksListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kbookDetailsVIew),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsVIew),
       child: SizedBox(
         height: 125,
         child: Row(
           children: [
             AspectRatio(
-              aspectRatio: 2.3 / 4,
+              aspectRatio: 2.4 / 4,
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.red,
