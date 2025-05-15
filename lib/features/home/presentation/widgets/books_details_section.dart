@@ -20,7 +20,7 @@ class BooksDetailsSection extends StatelessWidget {
         // book image
         Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width * 0.28),
-          child: CustomBookImage(),
+          child: CustomBookImage(image: ''),
         ),
         SizedBox(height: 40),
         // book title  , and the writer
