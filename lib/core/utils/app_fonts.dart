@@ -23,4 +23,9 @@ abstract class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle testStyle10 = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.normal,
+    fontFamily: kGtSectraFont,
+  );
 }

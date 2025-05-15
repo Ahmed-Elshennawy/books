@@ -42,7 +42,7 @@ class BooksApp extends StatelessWidget {
           create: (context) {
             return NewestBooksCubit(
               FetchNewestBooksUsecase(getIt.get<HomeRepoImpl>()),
-            );
+            )..fetchNewestBooks();
           },
         ),
       ],

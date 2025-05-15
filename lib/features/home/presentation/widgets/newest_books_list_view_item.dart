@@ -1,13 +1,15 @@
 import 'package:books/constants.dart';
 import 'package:books/core/utils/app_fonts.dart';
-import 'package:books/core/utils/app_images.dart';
 import 'package:books/core/utils/app_router.dart';
+import 'package:books/features/home/domain/entities/book_entity.dart';
 import 'package:books/features/home/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BooksListViewItem extends StatelessWidget {
-  const BooksListViewItem({super.key});
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({super.key, required this.book});
+
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +20,11 @@ class BooksListViewItem extends StatelessWidget {
         child: Row(
           children: [
             AspectRatio(
-              aspectRatio: 2.4 / 4,
+              aspectRatio: 2.5 / 3.8,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.red,
                   image: DecorationImage(
-                    image: AssetImage(AppImages.testImage),
+                    image: NetworkImage(book.image ?? ''),
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(8),
@@ -37,7 +38,7 @@ class BooksListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Harry Potter and the Goblet of Fire',
+                    book.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.testStyle20.copyWith(
@@ -45,18 +46,21 @@ class BooksListViewItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 3.0),
-                  Text('J.K. Rowling', style: Styles.testStyle14),
+                  Text(book.authorName ?? 'UnKnown', 
+                   maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  style: Styles.testStyle14),
                   const SizedBox(height: 3.0),
                   Row(
                     children: [
                       Text(
-                        '19.99 \$ ',
+                        book.price.toString(),
                         style: Styles.testStyle20.copyWith(
                           fontWeight: FontWeight.w900,
                         ),
                       ),
                       Spacer(),
-                      BookRating(),
+                      BookRating(rating: book.rating ?? '0.0'),
                     ],
                   ),
                 ],

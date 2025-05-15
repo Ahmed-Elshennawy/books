@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:books/features/home/presentation/widgets/best_seller_list_view_item.dart';
+// import 'package:books/features/home/presentation/widgets/best_seller_list_view_item.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -12,7 +12,7 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: const BooksListViewItem(),
+          // child: const BooksListViewItem(book: ,),
         );
       },
     );
