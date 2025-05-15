@@ -1,6 +1,6 @@
 import 'package:books/core/utils/app_fonts.dart';
 import 'package:books/features/home/presentation/widgets/best_seller_list_view.dart';
-import 'package:books/features/home/presentation/widgets/featured_list_view.dart';
+import 'package:books/features/home/presentation/widgets/featured_books_list_view_bloc_builder.dart';
 import 'package:books/features/home/presentation/widgets/home_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
               // App Bar
               HomeAppBar(),
               // Featured Books
-              FeaturedBooksListView(),
+              FeaturedBooksListViewBlocBuilder(),
               const SizedBox(height: 30.0),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),

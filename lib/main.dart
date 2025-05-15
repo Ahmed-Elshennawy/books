@@ -1,5 +1,6 @@
 import 'package:books/constants.dart';
 import 'package:books/core/functions/setup_service_locator.dart';
+import 'package:books/core/functions/simple_bloc_observer.dart';
 import 'package:books/core/utils/app_colors.dart';
 import 'package:books/core/utils/app_router.dart';
 import 'package:books/features/home/data/repositories_impl/home_repo_impl.dart';
@@ -14,12 +15,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
+  Bloc.observer = SimpleBlocObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   setupServiceLocator();
   await Hive.openBox<BookEntity>(kFeaturedBox);
   await Hive.openBox<BookEntity>(kNewestBox);
-
   runApp(const BooksApp());
 }
 
@@ -34,7 +35,7 @@ class BooksApp extends StatelessWidget {
           create: (context) {
             return FeaturedBooksCubit(
               FetchFeaturedBooksUseCase(getIt.get<HomeRepoImpl>()),
-            );
+            )..fetchFeaturedBooks();
           },
         ),
         BlocProvider(
