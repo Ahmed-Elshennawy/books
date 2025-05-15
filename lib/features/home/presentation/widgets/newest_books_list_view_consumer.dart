@@ -19,7 +19,10 @@ class NewestBooksListViewBlocConsumer extends StatelessWidget {
           return NewestBooksListView(books: state.books);
         } else {
           return SliverToBoxAdapter(
-            child: const Center(child: CircularProgressIndicator()),
+            child: const Center(child: Padding(
+              padding: EdgeInsets.only(top:100),
+              child: CircularProgressIndicator(),
+            )),
           );
         }
       },

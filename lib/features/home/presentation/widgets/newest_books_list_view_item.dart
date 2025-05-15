@@ -14,7 +14,11 @@ class NewestBooksListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsVIew),
+      onTap:
+          () => GoRouter.of(context).push(
+            AppRouter.kBookDetailsVIew,
+            extra: book, // Pass the BookEntity object
+          ),
       child: SizedBox(
         height: 125,
         child: Row(
@@ -46,15 +50,17 @@ class NewestBooksListViewItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 3.0),
-                  Text(book.authorName ?? 'UnKnown', 
-                   maxLines: 1,
+                  Text(
+                    book.authorName ?? 'UnKnown',
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                  style: Styles.testStyle14),
+                    style: Styles.testStyle14,
+                  ),
                   const SizedBox(height: 3.0),
                   Row(
                     children: [
                       Text(
-                        book.price.toString(),
+                        book.price?.toString() ?? 'N/A',
                         style: Styles.testStyle20.copyWith(
                           fontWeight: FontWeight.w900,
                         ),

@@ -7,14 +7,12 @@ class CustomButton extends StatelessWidget {
     required this.backgroundColor,
     required this.textColor,
     required this.text,
-    required this.fontSize,
     this.borderRadius,
   });
 
   final Color backgroundColor;
   final Color textColor;
   final String text;
-  final double fontSize;
   final BorderRadius? borderRadius;
 
   @override
@@ -34,7 +32,7 @@ class CustomButton extends StatelessWidget {
           style: Styles.testStyle18.copyWith(
             color: textColor,
             fontWeight: FontWeight.w900,
-            fontSize: fontSize,
+            fontSize: 14,
           ),
         ),
       ),

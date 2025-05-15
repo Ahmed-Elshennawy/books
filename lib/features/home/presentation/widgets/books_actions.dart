@@ -14,12 +14,11 @@ class BooksAction extends StatelessWidget {
             child: const CustomButton(
               backgroundColor: Colors.white,
               textColor: Colors.black,
-              text: '19.99 \$',
+              text: 'Download',
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
-              fontSize: 22,
             ),
           ),
           Expanded(
@@ -31,7 +30,6 @@ class BooksAction extends StatelessWidget {
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
               ),
-              fontSize: 14,
             ),
           ),
         ],
