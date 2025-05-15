@@ -28,7 +28,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
   void _scrollListener() async {
     if (_scrollController.position.pixels >=
         _scrollController.position.maxScrollExtent * 0.7) {
-      if (isLoading) {
+      if (!isLoading) {
         isLoading = true;
         await BlocProvider.of<FeaturedBooksCubit>(
           context,
